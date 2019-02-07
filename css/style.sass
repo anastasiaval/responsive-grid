@@ -1,0 +1,40 @@
+@import "fonts"
+@import "mixins"
+
+*
+  margin: 0
+  padding: 0
+
+.grid
+  display: grid
+
+.grid-container
+  height: 100vh
+  grid-template-rows: 130px 1fr 130px
+
+header, footer, main
+  grid-column: 1 / 4
+
+.top-bar
+  background-color: #f6f6f6
+  &__content
+    margin: 0 375px
+    grid-template-columns: auto auto
+    justify-content: space-between
+  &__link
+    text-decoration: none
+    +top-bar_text
+  &__span
+    margin-left: -40px
+    +top-bar_text
+  &__left
+    a
+      margin-right: 40px
+  &__right
+    a
+      margin-left: 40px
+
+
+footer
+  background-color: #1f1f1f
+
