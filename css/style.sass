@@ -1,9 +1,11 @@
 @import "fonts"
 @import "mixins"
+@import "variables"
 
 *
   margin: 0
   padding: 0
+  box-sizing: border-box
 
 .grid
   display: grid
@@ -14,13 +16,13 @@
 
 header, footer, main
   grid-column: 1 / 4
+  grid-template-rows: auto 1fr 1fr
 
 .top-bar
   background-color: #f6f6f6
   &__content
-    margin: 0 375px
-    grid-template-columns: auto auto
-    justify-content: space-between
+    margin: $content-1920
+    +grid-2-between
   &__link
     text-decoration: none
     +top-bar_text
@@ -34,7 +36,65 @@ header, footer, main
     a
       margin-left: 40px
 
+.nav-content
+  margin: $content-1920
+
+.search
+  border: 1px solid #e1e1e1
+  width: 260px
+  //margin-left: auto
+  //margin-right: 0
+  margin: 16px 0 2px auto
+  &__input
+    font-family: Trebuchet MS Regular, sans-serif
+    border: none
+    outline: none
+    line-height: 32px
+    font-size: 13px
+    font-weight: 400
+    padding: 0 11px
+    width: 89%
+    &::placeholder
+      color: #888888
+
+  &__button
+    background: url("../img/search-icon.png") no-repeat 0 0
+    padding: 11px
+    border: none
+    cursor: pointer
+    outline: none
+
+.navigation
+  +grid-2-between
+  &__logo
+    text-decoration: none
+    font-family: MerriweatherSans, sans-serif
+    color:  #454545
+    font-size: 44px
+    font-weight: 700
+    padding-left: 50px
+    background: url("../img/logo1.png") no-repeat 0 8px
+  &__menu
+    line-height: 50px
+    a
+      font-family: Cousine, sans-serif
+      text-decoration: none
+      margin-left: 50px
+      color:  #565656
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+
 
 footer
   background-color: #1f1f1f
+
+
+@media screen  and (max-width: 940px)
+  .top-bar__content
+    margin: $content-940
+  .nav-content
+    margin: $content-940
+  .navigation__menu a
+    margin-left: 40px
 

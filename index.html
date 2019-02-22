@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FENGO homepage</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="grid-container grid">
-
     <header class="grid">
         <div class="top-bar">
             <div class="top-bar__content grid">
@@ -25,15 +25,28 @@
                     <a class="top-bar__link" href="#">My Bag: 0 item(s)</a>
                 </div>
             </div>
-
         </div>
-        <div class="search"></div>
-        <div class="navigation"></div>
+        <div class="nav-content">
+            <form class="search">
+                <input class="search__input" type="search" placeholder="Find it here...">
+                <button class="search__button" type="submit"></button>
+            </form>
+            <div class="navigation grid">
+                <a class="navigation__logo" href="#">FENGO</a>
+                <div class="navigation__menu">
+                    <a href="#">Fashion</a>
+                    <a href="#">Electronics</a>
+                    <a href="#">Gifts</a>
+                    <a href="#">Books</a>
+                    <a href="#">At Home</a>
+                    <a href="#">Music</a>
+                    <a href="#">Sale</a>
+                </div>
+            </div>
+        </div>
     </header>
     <main></main>
     <footer></footer>
-
 </div>
-
 </body>
 </html>

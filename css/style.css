@@ -1,7 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans");
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Cousine:400,700");
+@font-face {
+  font-family: "Trebuchet MS Regular";
+  src: url("/fonts/TrebuchetMS.woff") format("woff"); }
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box; }
 
 .grid {
   display: grid; }
@@ -11,17 +16,18 @@
   grid-template-rows: 130px 1fr 130px; }
 
 header, footer, main {
-  grid-column: 1/4; }
+  grid-column: 1/4;
+  grid-template-rows: auto 1fr 1fr; }
 
 .top-bar {
   background-color: #f6f6f6; }
   .top-bar__content {
-    margin: 0 375px;
+    margin: 0 148px;
     grid-template-columns: auto auto;
     justify-content: space-between; }
   .top-bar__link {
     text-decoration: none;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-family: "Merriweather Sans", sans-serif;
     color: #7e7e7e;
     font-size: 11px;
@@ -29,7 +35,7 @@ header, footer, main {
     line-height: 19px; }
   .top-bar__span {
     margin-left: -40px;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-family: "Merriweather Sans", sans-serif;
     color: #7e7e7e;
     font-size: 11px;
@@ -40,7 +46,64 @@ header, footer, main {
   .top-bar__right a {
     margin-left: 40px; }
 
+.nav-content {
+  margin: 0 148px; }
+
+.search {
+  border: 1px solid #e1e1e1;
+  width: 260px;
+  margin: 16px 0 2px auto; }
+  .search__input {
+    font-family: Trebuchet MS Regular, sans-serif;
+    border: none;
+    outline: none;
+    line-height: 32px;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 11px;
+    width: 89%; }
+    .search__input::placeholder {
+      color: #888888; }
+  .search__button {
+    background: url("../img/search-icon.png") no-repeat 0 0;
+    padding: 11px;
+    border: none;
+    cursor: pointer;
+    outline: none; }
+
+.navigation {
+  grid-template-columns: auto auto;
+  justify-content: space-between; }
+  .navigation__logo {
+    text-decoration: none;
+    font-family: MerriweatherSans, sans-serif;
+    color: #454545;
+    font-size: 44px;
+    font-weight: 700;
+    padding-left: 50px;
+    background: url("../img/logo1.png") no-repeat 0 8px; }
+  .navigation__menu {
+    line-height: 50px; }
+    .navigation__menu a {
+      font-family: Cousine, sans-serif;
+      text-decoration: none;
+      margin-left: 50px;
+      color: #565656;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase; }
+
 footer {
   background-color: #1f1f1f; }
+
+@media screen and (max-width: 940px) {
+  .top-bar__content {
+    margin: 0 20px; }
+
+  .nav-content {
+    margin: 0 20px; }
+
+  .navigation__menu a {
+    margin-left: 40px; } }
 
 /*# sourceMappingURL=style.css.map */
